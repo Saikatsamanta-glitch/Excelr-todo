@@ -14,8 +14,8 @@ export default function Counter() {
         return (
                 <center className="mt-10">
                <h1 className="text-5xl">Current Count value : {count}</h1>
-               <button className='btn bg-yellow-200 mt-10' onClick={inc}>Increment</button>
-               <button className='btn bg-black mt-10 text-white' onClick={dec}>Decrement</button>
+               <button className='btn bg-yellow-200 m-10' onClick={inc}>Increment</button>
+               <button className='btn bg-black m-10 text-white' onClick={dec}>Decrement</button>
                </center>
         )
 }
