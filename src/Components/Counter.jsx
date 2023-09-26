@@ -1,15 +1,23 @@
 import React, { useState } from 'react';
-
+// useState [currVal, setcurrVal]
 export default function Counter() {
-        const [count, setCount] = useState(0);
-        
-        
+        // Hooks: useState, useEffect, top of the scope
+        // Hooks cannot be conditional
+        const [count,setCount] = useState(0);
+
+        const inc=()=>{
+                setCount(count+1)
+        }
+        const dec=()=>{
+                setCount(count-1)
+        }
         return (
-                <div className='flex items-center flex-col justify-center'>
-                        <h1 className='text-5xl mb-6'> Counter : {count} </h1>
-                        <button onClick={() =>setCount(count + 1)} className="h-14 w-32 bg-black text-white"> Increment </button>
-                        <button onClick={() => {
-                if (!(count <= 0)) setCount(count - 1)}} className="h-14 w-32 bg-black text-white"> Decrement </button>
-                </div>
+                <center className="mt-10">
+               <h1 className="text-5xl">Current Count value : {count}</h1>
+               <button className='btn bg-yellow-200 mt-10' onClick={inc}>Increment</button>
+               <button className='btn bg-black mt-10 text-white' onClick={dec}>Decrement</button>
+               </center>
         )
 }
+
+// events: onClick,onChange,onPress, onKeydown, onHover,.......
