@@ -1,8 +1,10 @@
 import Card from "./Components/Card";
 import Navbar from "./Components/Navbar";
 import ViewSection from "./Components/ViewSection";
-
+import Tasks from "./taskdata";
 function App() {
+        // forEach vs map: Answer
+        // Props
         return (
                 <>
                         <Navbar />
@@ -11,13 +13,14 @@ function App() {
                                 <ViewSection />
 
                                 <div className="card_container mt-14 flex flex-wrap gap-6 justify-center">
-                                        <Card />
-                                        <Card />
-                                        <Card />
-                                        <Card />
-                                        <Card />
-                                        <Card />
-
+                                        {
+                                                Tasks.map(v=>{
+                                                        if(!v.deleted){
+                                                            return <Card key={v.id} data={v} />    
+                                                        }
+                                                        
+                                                })
+                                        }
                                 </div>
                         </div>
                 </>
@@ -25,3 +28,5 @@ function App() {
 }
 
 export default App;
+
+
