@@ -17,7 +17,7 @@ function App() {
                                                 Tasks.map(v=>{
                                                         if(!v.deleted){
                                                             return <Card key={v.id} data={v} />    
-                                                        }
+                                                        }else return null;
                                                         
                                                 })
                                         }

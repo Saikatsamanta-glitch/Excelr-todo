@@ -10,10 +10,10 @@ export default function Card(props) {
 
         <div className="options flex justify-between">
         {
-                props.data.completed ? <button className='h-8 w-32 bg-green-300 rounded-xl'> Completed </button> : <button className='h-8 w-32 bg-red-300 rounded-xl'> Incomplete </button>
+                props.data.completed ? <button className='h-8 w-32 bg-green-300 rounded-lg'> Completed </button> : <button className='h-8 w-32 bg-red-300 rounded-lg'> Incomplete </button>
         }
-        <i className={`fi fi-rr-icon-star text-2xl ${props.data.fav && "text-red-500"}` }></i>
-        <i className="fi fi-rs-trash text-2xl"></i>
+        <i className={`hover:animate-wiggle fi fi-sr-heart text-2xl ${props.data.fav && "text-red-500"}` }></i>
+        <i className="hover:animate-shake fi fi-rs-trash text-2xl"></i>
         
         </div>
     </div>
