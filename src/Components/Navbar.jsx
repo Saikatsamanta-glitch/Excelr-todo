@@ -3,7 +3,7 @@ import Modal from './Modal';
 const date = new Date().toLocaleTimeString();
 
 console.log(date);
-export default function Navbar({task,setTask}) {
+export default function Navbar() {
         const [show,setShow]=useState(false)
         return (
                 <div className='w-screen h-16  flex items-center justify-evenly'>
@@ -16,7 +16,7 @@ export default function Navbar({task,setTask}) {
                                 <i className="hover:text-black fi fi-rr-bell-ring text-2xl text-black/60"></i>
                                 <button onClick={()=>{setShow(!show)}} className= 'bg-white h-12 w-32 rounded-lg ms-6 text-black/60 hover:text-black'> + Create Event </button>
                         </div>
-                        <Modal show={show} setShow={setShow} task={task} setTask={setTask} />
+                        <Modal show={show} setShow={setShow}  />
                 </div>
         )
 }

@@ -1,8 +1,11 @@
 import Card from "./Components/Card";
-import { useState } from "react";
+import { useState, createContext } from "react";
 import Navbar from "./Components/Navbar";
 import ViewSection from "./Components/ViewSection";
 import Tasks from "./taskdata";
+
+export const Data = createContext()
+
 function App() {
         // forEach vs map: Answer
         // Props
@@ -11,8 +14,8 @@ function App() {
         // data from internet: useEffect
         
         return (
-                <>
-                        <Navbar task={task} setTask={setTask}  />
+                <Data.Provider value={{task, setTask}}>
+                        <Navbar />
                         <div className="mx-48 mt-10">
                                 <h1 className="text-4xl">All task (0 task)</h1>
                                 <ViewSection />
@@ -29,7 +32,7 @@ function App() {
                                 </div>
                         </div>
                         
-                </>
+                </Data.Provider>
         );
 }
 
